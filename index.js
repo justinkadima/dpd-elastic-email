@@ -67,7 +67,7 @@ ElasticEmail.prototype.handle=function(ctx,next){
     }
 
     console.log(ctx);
-    var options=ctx.body || {};
+    var options=ctx.query || {};
 
     console.log(options);
 
