@@ -113,7 +113,7 @@ ElasticEmail.prototype.handle=function(ctx,next){
 
     if(this.config.developmentMode){
         console.log(post_data);
-        ctx.done(null);
+        return ctx.done(null);
     }
 
     
@@ -144,7 +144,7 @@ ElasticEmail.prototype.handle=function(ctx,next){
 	post_req.write(post_data);
 	post_req.end();
 	
-    ctx.done(null,{message: result});
+    return ctx.done(null,{message: result});
 }
 
 
