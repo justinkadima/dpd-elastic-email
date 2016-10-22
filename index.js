@@ -57,16 +57,16 @@ ElasticEmail.basicDashboard={
 
 ElasticEmail.prototype.handle=function(ctx,next){
 
-   /*if(ctx.req && ctx.req.method!='POST'){
+   if(ctx.req && ctx.req.method!='POST'){
         return next();
-    }*/
+    }
 
     if(!this.config.username || !this.config.key){
         console.log('Elastic username & key missing!');
         next();
     }
 
-
+    console.log(ctx);
     var options=ctx.body || {};
 
     console.log(options);
@@ -117,7 +117,7 @@ ElasticEmail.prototype.handle=function(ctx,next){
     }
 
     console.log(post_data);
-    
+
 	var post_options = {
 		host: 'api.elasticemail.com',
 		path: '/mailer/send',
