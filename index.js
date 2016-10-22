@@ -66,16 +66,16 @@ ElasticEmail.prototype.handle=function(ctx,next){
         next();
     }
 
-    console.log(ctx);
+    
     var options=ctx.query || {};
 
-    console.log(options);
+    
 
     options.fromName=options.fromName || this.config.defaultFromName;
     options.fromEmail=options.fromEmail || this.config.defaultFromEmail;
     options.subject=options.subject || this.config.defaultSubject;
 
-    console.log(options);
+    
 
     var errors={};
 
@@ -106,8 +106,8 @@ ElasticEmail.prototype.handle=function(ctx,next){
 		'from_name' : options.fromName,
 		'to' : options.to,
 		'subject' : options.subject,
-		'body_html' : options.text,
-		'body_text' : options.html
+		'body_html' : options.html,
+		'body_text' : options.text
 	});
 
 
@@ -116,7 +116,7 @@ ElasticEmail.prototype.handle=function(ctx,next){
         return ctx.done(null);
     }
 
-    console.log(post_data);
+    
 
 	var post_options = {
 		host: 'api.elasticemail.com',
