@@ -99,7 +99,7 @@ ElasticEmail.prototype.handle=function(ctx,next){
     }
 
 
-    var post_data = querystring.stringify({
+    var post_data = qs.stringify({
 		'username' : this.config.username,
 		'api_key': this.config.key,
 		'from': options.fromEmail,
