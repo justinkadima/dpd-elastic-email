@@ -116,6 +116,7 @@ ElasticEmail.prototype.handle=function(ctx,next){
         return ctx.done(null);
     }
 
+    console.log(post_data);
     
 	var post_options = {
 		host: 'api.elasticemail.com',
